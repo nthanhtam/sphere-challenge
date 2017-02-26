@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-This class generate statiscal feature of 1st derivative
+This class generate statistical feature of 1st derivative
 """
 
 import warnings
