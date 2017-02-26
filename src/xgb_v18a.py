@@ -160,19 +160,16 @@ def predict(model, filename, isXgb=False):
     logging.info("{} lines written.".format(num_lines))
 
 def xgb_model(train_x, train_y):
-    depth = 5
-    eta = 0.01
-    ntrees = 1
+    depth = 6
+    eta = 0.04
+    ntrees = 200
 
-    params = {"objective": "multi:softprob",
-              "num_class": 20,
+    params = {"objective": "multi:softprob", 'num_class': 20,
               "booster": "gbtree",
               "eta": eta,
               "max_depth": depth,
-              "min_child_weight": 1,
-              "subsample": 0.7,
-              "colsample_bytree": 0.7,
-              "eval_metric": "mlogloss",
+              "subsample": 0.9,
+              "colsample_bytree": 0.2,
               "silent": 1}
 
     logging.info("Modelling with ntrees: " + str(ntrees))
